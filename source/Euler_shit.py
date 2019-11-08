@@ -13,18 +13,20 @@ def sim(h, N, v_0, x_0):
     t = np.zeros(N)
     norm = np.zeros(N)
     fric = np.zeros(N)
-    alpha = np.zeros(N)
 
     # Eulers shitty method
     for n in range(N-1):
+        # Update time and angle for current position
         t[n+1] = t[n] + h
-        alpha[n] = exlab.slope(lane_h, x[n])
+        alpha = exlab.slope(lane_h, x[n])
 
-        x[n+1] = x[n] + h*v[n]*np.cos(alpha[n])
-        v[n+1] = v[n] + 0.5*h*fv(v[n], alpha[n])
-        
-        norm[n] = fnorm(v[n], x[n], alpha[n])
-        fric[n] = ffric(v[n], x[n], alpha[n])
+        # Store current state for norm and fric
+        norm[n] = fnorm(v[n], x[n], alpha)
+        fric[n] = ffric(v[n], x[n], alpha)
+
+        # Calculate next states for position and velocity
+        x[n+1] = x[n] + h*v[n]*np.cos(alpha)
+        v[n+1] = v[n] + 0.5*h*fv(v[n], alpha)
 
     return t, v, x, norm, fric
 
