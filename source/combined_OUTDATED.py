@@ -1,3 +1,6 @@
+# OUTDATED!!!
+# NO guarantee of this working (it probably won't)
+
 # Implementation of Heun's method (RK2)
 import numpy as np
 import matplotlib.pyplot as plt
