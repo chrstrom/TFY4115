@@ -1,2 +1,2 @@
 Numeriske beregninger til TFY4115 lab. På ingen måte skrevet for "maintainability" eller "readability",
-kun brute-force løsninger på det som trengs for laboppgaven.
+kun brute-force løsninger på det som trengs for laboppgaven. Euler.py under source/ er kjernen til den numeriske analysen.
