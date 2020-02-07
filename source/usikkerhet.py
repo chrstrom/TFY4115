@@ -6,7 +6,7 @@ def det_sigma(values):
     sigma = np.zeros(len(values))
 
     for i in range(len(values)):
-        delta = rnd.uniform(0.95, 0.104)
+        delta = rnd.uniform(0.95, 1.049)
         sigma[i] = delta*values[i]
 
     return sigma
