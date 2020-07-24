@@ -11,9 +11,9 @@ def det_sigma(values):
 
     return sigma
 
-def get_exp_data():
+def get_exp_data(path):
     # data is of the form  t   x   y   v   a   r
-    exp_data = np.loadtxt("/home/christopher/Documents/3. semester/TFY4115/resources/data.txt")
+    exp_data = np.loadtxt(path)
     exp_data_t = exp_data[:, 0]
     exp_data_x = exp_data[:, 1]
     exp_data_y = exp_data[:, 2]
@@ -37,7 +37,7 @@ def get_exp_data():
 
 
 if __name__ == '__main__':
-    data_t, data_v, data_x = get_exp_data()
+    data_t, data_v, data_x = get_exp_data("/home/christopher/Documents/3. semester/TFY4115/resources/data.txt")
 
     sigma_v = det_sigma(data_v)
     sigma_x = det_sigma(data_x)
